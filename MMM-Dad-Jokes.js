@@ -13,12 +13,8 @@ Module.register("MMM-Dad-Jokes", {
 
   result: {},
   defaults: {
-    prettyName: true,
-    stripName: true,
-    title: 'Dad MMM-Dad-Jokes',
-    url: '',
-    updateInterval: 600000,
-    values: []
+    title: 'Dad Jokes',
+    updateInterval: 60000,
   },
 
   start: function() {

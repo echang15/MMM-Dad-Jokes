@@ -19,13 +19,11 @@ module.exports = NodeHelper.create({
       request({ url: 'https://icanhazdadjoke.com', 
           headers:{
             'Accept':'application/json',
-            'User-Agent': 'MMM-Dad-Jokes (https://github.com/echang15/repo)'
+            'User-Agent': 'MMM-Dad-Jokes (https://github.com/echang15/MMM-Dad-Jokes)'
           },
           method: 'GET' }, function (error, response, body) {
-          //console.log(response);
           if (!error && response.statusCode == 200) {
-            var result = JSON.parse(response.body);
-            //console.log(result);
+            var result = JSON.parse(response.body);        
             self.sendSocketNotification('JOKE_RESULT', result);
           }
       });
