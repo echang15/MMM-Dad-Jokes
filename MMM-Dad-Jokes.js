@@ -80,7 +80,7 @@ Module.register("MMM-Dad-Jokes", {
 
     var self = this;
     setInterval(function() {
-      self.getStats();
+      self.getJoke();
     }, nextLoad);
   },
 
