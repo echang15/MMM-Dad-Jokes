@@ -17,7 +17,7 @@ var config = {
             position: 'bottom_left', // Or wherever you want
             config: {
                 updateInterval: 60000,
-				fadeSpeed: 4000
+                fadeSpeed: 4000
             }
         }
     ]
@@ -28,5 +28,5 @@ var config = {
 
 | Option           | Description
 |----------------- |-----------
-| updateInterval        | *Required* How often to grab an amazing joke! Defaults to one minute
-| fadeSpeed             | How quickly the jokes fade in and out. Defaults to 4 seconds
+| updateInterval   | *Required* How often to grab an amazing joke! Defaults to one minute
+| fadeSpeed        | How quickly the jokes fade in and out. Defaults to 4 seconds
