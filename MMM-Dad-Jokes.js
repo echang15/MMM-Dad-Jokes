@@ -7,95 +7,50 @@
  * MIT Licensed.
  */
 
-'use strict';
+"use strict";
 
 Module.register("MMM-Dad-Jokes", {
 
-  result: {},
-  defaults: {
-    title: 'Dad Jokes',
-    updateInterval: 60000,
-  },
+	result: {joke: "loading dad joke..."},
 
-  start: function() {
-    this.getJoke();
-    this.scheduleUpdate();
-  },
+	defaults: {
+		title: "Dad Jokes",
+		updateInterval: 60*1000, // every 60 seconds
+		fadeSpeed: 4*1000, // four seconds
+	},
 
-  isEmpty: function(obj) {
-    for(var key in obj) {
-      if(obj.hasOwnProperty(key)) {
-        return false;
-      }
-    }
+	start: function() {
+		this.getJoke();
+		this.scheduleUpdate();
+	},
 
-    return true;
-  },
+	getDom: function() {
+		var wrapper = document.createElement("div");
 
-  getDom: function() {
-    var wrapper = document.createElement("ticker");
-    wrapper.className = 'dimmed small';
+		var joke = document.createElement("div");
+		joke.className = "bright light medium";
+		joke.style.textAlign = "center";
+		joke.style.margin = "0 auto";
+		joke.innerHTML = this.result["joke"];
 
-    var data = this.result;
-    var statElement =  document.createElement("span");
-    var title = this.config.title;
-    statElement.innerHTML = title;
-    wrapper.appendChild(statElement);
+		wrapper.appendChild(joke);
+		return wrapper;
+	},
 
-    if (data && !this.isEmpty(data)) {
-      if (data.hasOwnProperty('joke'))
-        {
-          statElement.innerHTML = data['joke'];
-          wrapper.appendChild(statElement);
-        }
-      
-    } else {
-      var error = document.createElement("span");
-      error.innerHTML = "Error fetching stats.";
-      wrapper.appendChild(error);
-    }
+	getJoke: function () {
+		this.sendSocketNotification("GET_JOKE");
+	},
 
-    return wrapper;
-  },
+	scheduleUpdate: function() {
+		setInterval(() => {
+			this.getJoke();
+		}, this.config.updateInterval);
+	},
 
-  getValue: function(data, value) {
-    if (data && value) {
-      var split = value.split(".");
-      var current = data;
-      while (split.length > 0) {
-        current = current[split.shift()];
-      }
-
-      return current;
-    }
-
-    return null;
-  },
-
-  scheduleUpdate: function(delay) {
-    var nextLoad = this.config.updateInterval;
-    if (typeof delay !== "undefined" && delay >= 0) {
-      nextLoad = delay;
-    }
-
-    var self = this;
-    setInterval(function() {
-      self.getJoke();
-    }, nextLoad);
-  },
-
-  getJoke: function () {
-    this.sendSocketNotification('GET_JOKE', this.config.url);
-  },
-
-  socketNotificationReceived: function(notification, payload) {
-    if (notification === "JOKE_RESULT") {
-      this.result = payload;
-      var fade = 500;
-      console.log("fade: " + fade);
-      this.updateDom(fade);
-    }
-  },
-
+	socketNotificationReceived: function(notification, payload) {
+		if (notification == "JOKE_RESULT") {
+			this.result = payload;
+			this.updateDom(this.config.fadeSpeed);
+		}
+	},
 });
-
