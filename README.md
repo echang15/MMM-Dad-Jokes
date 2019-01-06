@@ -28,9 +28,6 @@ var config = {
 
 | Option           | Description
 |----------------- |-----------
-<<<<<<< HEAD
 | updateInterval   | *Required* How often to grab an amazing joke! Defaults to one minute
-=======
-| updateInterval        | *Required* How often to grab an amazing joke! Defaults to one minute
->>>>>>> remotes/origin/master
+| updateInterval   | *Required* How often to grab an amazing joke! Defaults to one minute
 | fadeSpeed        | How quickly the jokes fade in and out. Defaults to 4 seconds
