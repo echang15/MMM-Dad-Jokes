@@ -14,9 +14,10 @@ var config = {
     modules: [
         {
             module: 'MMM-Dad-Jokes',
-            position: 'bottom_left', //Or wherever you want
+            position: 'bottom_left', // Or wherever you want
             config: {
                 updateInterval: 60000,
+                fadeSpeed: 4000
             }
         }
     ]
@@ -27,5 +28,5 @@ var config = {
 
 | Option           | Description
 |----------------- |-----------
-| updateInterval        | *Required* How often to grab an amazing joke! Default 1 minute)
-
+| updateInterval   | *Required* How often to grab an amazing joke! Defaults to one minute
+| fadeSpeed        | How quickly the jokes fade in and out. Defaults to four seconds
