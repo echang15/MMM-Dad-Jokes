@@ -17,6 +17,7 @@ Module.register("MMM-Dad-Jokes", {
 		title: "Dad Jokes",
 		updateInterval: 60*1000, // every 60 seconds
 		fadeSpeed: 4*1000, // four seconds
+		filters: [],
 	},
 
 	start: function() {
@@ -49,8 +50,14 @@ Module.register("MMM-Dad-Jokes", {
 
 	socketNotificationReceived: function(notification, payload) {
 		if (notification == "JOKE_RESULT") {
-			this.result = payload;
-			this.updateDom(this.config.fadeSpeed);
+			if( this.config.filters.some( term => payload.joke.toLowerCase().indexOf(term) > -1 ) ) {
+				// Filter matched, skip this joke
+				this.getJoke();
+			}
+			else {
+				this.result = payload;
+				this.updateDom(this.config.fadeSpeed);
+			}
 		}
 	},
 });

@@ -30,3 +30,4 @@ var config = {
 |----------------- |-----------
 | updateInterval   | *Required* How often to grab an amazing joke! Defaults to one minute
 | fadeSpeed        | How quickly the jokes fade in and out. Defaults to four seconds
+| filters          | Array of words not to include in jokes
