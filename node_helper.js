@@ -15,7 +15,13 @@ module.exports = NodeHelper.create({
 	getJoke: async function () {
 		var parent = this; // save this object
 
-		fetch('https://icanhazdadjoke.com').then(response => {
+		fetch('https://icanhazdadjoke.com', {
+			method: 'GET',
+			headers: {
+				'Accept':'application/json',
+				'User-Agent': 'MMM-Dad-Jokes (https://github.com/brucetony/MMM-Dad-Jokes)'
+			}
+		}).then(response => {
 			parent.sendSocketNotification('JOKE_RESULT', response.json())
 		}).catch(err => console.error(err));
 	},
