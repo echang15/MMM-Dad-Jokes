@@ -21,8 +21,8 @@ module.exports = NodeHelper.create({
 				'Accept':'application/json',
 				'User-Agent': 'MMM-Dad-Jokes (https://github.com/brucetony/MMM-Dad-Jokes)'
 			}
-		}).then(response => {
-			parent.sendSocketNotification('JOKE_RESULT', response.json())
+		}).then(response => response.json()).then(data => {
+			parent.sendSocketNotification('JOKE_RESULT', data);
 		}).catch(err => console.error(err));
 	},
 
