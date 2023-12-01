@@ -15,7 +15,7 @@ Module.register("MMM-Dad-Jokes", {
 
 	defaults: {
 		title: "Dad Jokes",
-		updateInterval: 60*1000, // every 60 seconds
+		updateInterval: 30*60*1000, // every 30 minutes
 		fadeSpeed: 4*1000, // four seconds
 		filters: [],
 	},
