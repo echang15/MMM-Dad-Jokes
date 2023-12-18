@@ -1,7 +1,16 @@
 {
-  "name": "MMM-Dad-Jokes",
-  "version": "1.0.0",
+  "name": "mmm-dad-jokes",
+  "version": "1.1.0",
   "description": "Random Dad Joke",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/echang15/MMM-Dad-Jokes"
+  },
+  "keywords": [
+    "MagicMirror",
+    "jokes",
+    "dad jokes"
+  ],
   "main": "MMM-Dad-Jokes.js",
   "author": "Eric Chang",
   "license": "MIT",
