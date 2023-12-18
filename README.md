@@ -4,7 +4,7 @@ This is a module for the [MagicMirror²](https://github.com/MichMich/MagicMirror
 
 Random Dad Jokes... from https://icanhazdadjoke.com/
 
-This was a learning exercise with node and Magic Mirror - feel free to do what you want with it.
+This was a learning exercise with node and MagicMirror² - feel free to do what you want with it.
 
 ## Using the module
 
