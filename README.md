@@ -12,7 +12,7 @@ Just clone the module into your modules folder of your MagicMirror² and execute
 
 ```bash
 cd ~/MagicMirror/modules
-git clone https://github.com/echang15/MMM-Dad-Jokes
+git clone https://github.com/brucetony/MMM-Dad-Jokes
 ```
 
 ## Using the module
