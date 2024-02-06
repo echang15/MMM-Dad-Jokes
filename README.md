@@ -2,22 +2,33 @@
 
 This is a module for the [MagicMirror²](https://github.com/MichMich/MagicMirror/).
 
-Random Dad Jokes... from https://icanhazdadjoke.com/
+Random Dad Jokes... from <https://icanhazdadjoke.com/>
 
-This was a learning exercise with node and Magic Mirror - feel free to do what you want with it.
+This was a learning exercise with node and MagicMirror² - feel free to do what you want with it.
+
+## Installation
+
+Just clone the module into your modules folder of your MagicMirror² and execute `npm install` in the module’s directory:
+
+```bash
+cd ~/MagicMirror/modules
+git clone https://github.com/brucetony/MMM-Dad-Jokes
+```
 
 ## Using the module
 
 To use this module, add the following configuration block to the modules array in the `config/config.js` file:
+
 ```js
-var config = {
+let config = {
     modules: [
         {
             module: 'MMM-Dad-Jokes',
             position: 'bottom_left', // Or wherever you want
             config: {
-                updateInterval: 60000,
-                fadeSpeed: 4000
+                updateInterval: 30*60*1000, // every 30 minutes
+                fadeSpeed: 4*1000, // four seconds
+                filters: [],
             }
         }
     ]
@@ -28,6 +39,6 @@ var config = {
 
 | Option           | Description
 |----------------- |-----------
-| updateInterval   | *Required* How often to grab an amazing joke! Defaults to one minute
-| fadeSpeed        | How quickly the jokes fade in and out. Defaults to four seconds
-| filters          | Array of words not to include in jokes
+| updateInterval   | How often to grab an amazing joke! Default is 30 minutes.
+| fadeSpeed        | How quickly the jokes fade in and out. Default is four seconds.
+| filters          | Array of words not to include in jokes.
