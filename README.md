@@ -1,6 +1,6 @@
 # MMM-Dad-Jokes
 
-This is a module for the [MagicMirror²](https://github.com/MichMich/MagicMirror/).
+This is a module for the [MagicMirror²](https://github.com/MagicMirrorOrg/MagicMirror/).
 
 Random Dad Jokes... from <https://icanhazdadjoke.com/>
 
