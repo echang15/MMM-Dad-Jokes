@@ -6,6 +6,10 @@ Random Dad Jokes... from <https://icanhazdadjoke.com/>
 
 This was a learning exercise with node and MagicMirror² - feel free to do what you want with it.
 
+## Screenshot example
+
+![screenshot](screenshot.png)
+
 ## Installation
 
 Just clone the module into your modules folder of your MagicMirror² and execute `npm install` in the module’s directory:
