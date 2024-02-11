@@ -1,18 +1,30 @@
 {
-  "name": "MMM-Dad-Jokes",
-  "version": "1.0.0",
+  "name": "mmm-dad-jokes",
+  "version": "1.2.0",
   "description": "Random Dad Joke",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/brucetony/MMM-Dad-Jokes"
+  },
+  "keywords": [
+    "MagicMirror",
+    "jokes",
+    "dad jokes"
+  ],
   "main": "MMM-Dad-Jokes.js",
   "author": "Eric Chang",
   "license": "MIT",
   "devDependencies": {
-    "grunt": "latest",
-    "grunt-eslint": "latest",
-    "grunt-jsonlint": "latest",
-    "grunt-markdownlint": "^1.0.13",
-    "grunt-stylelint": "latest",
-    "grunt-yamllint": "latest",
-    "stylelint-config-standard": "latest",
-    "time-grunt": "latest"
+    "@stylistic/eslint-plugin": "latest",
+    "eslint": "latest",
+    "eslint-plugin-markdownlint": "latest",
+    "jsonc-eslint-parser": "latest",
+    "stylelint": "latest",
+    "stylelint-config-standard": "latest"
+  },
+  "scripts": {
+    "lint": "eslint . && stylelint **/*.css",
+    "lint:fix": "eslint --fix . && stylelint --fix **/*.css",
+    "test": "npm run lint"
   }
 }
